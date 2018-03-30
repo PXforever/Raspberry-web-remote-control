@@ -1,0 +1,123 @@
+﻿
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>led contral</title>
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;" />
+    <title>Led Contral</title>
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<style>
+    #header {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 5px;
+    }
+
+    #nav {
+        line-height: 30px;
+        background-color: yellow;
+        height: 80%;
+        width: 69%;
+        float: left;
+        padding: 1%;
+    }
+
+    #section {
+        background-color: #b6ff00;
+        height: 80%;
+        width: 27%;
+        float: right;
+        padding: 1%;
+    }
+
+    #footer {
+        background-color: black;
+        color: #ff6a00;
+        clear: both;
+        text-align: center;
+        padding: 5px;
+    }
+
+</style>
+
+
+
+<body>
+
+    <div id="header">
+        <h1>Raspberry Control    (横屏最佳)</h1>
+    </div>
+
+
+
+
+    <div id="nav" >
+ 
+        <div style="background:green; width:70%; height:100%; float:left">
+            <h3 align ="center"> 视频 </h3>
+            <img src="{{ url_for('video_feed') }}" style="width:100%; height :80%; ">
+        </div>
+        <div style="background:pink; width:30%; height:100%;float:left">
+            控制部分
+            <button class="top" type="button">Top</button>
+            <button class="down" type="button">Down</button>
+            <button class="left" type="button">Left</button>
+            <button class="right" type="button">Right</button>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="section">
+        <div style="background:#808080; width:100%; height:30%; float:left">
+           <h5 align ="center" style="height:1px;color:#4cff00"> LED 状态</h5>
+            <hr />
+                <p align="center"> LED 1:{{i}} &nbsp;&nbsp;&nbsp; LED 2:{{j}}</p>
+        </div>
+
+
+        <div style="background:#b200ff; width:100%; height:70%;float:left">
+            <h5 align ="center">LED 控制</h5>
+            <hr />
+
+            <form id="form1" name="form1" method="post" action="">
+                <input checked="checked" style="margin-left:20%" name="radio" type="radio" id="radio" value="one" {{a}}="{{a}}" />
+                <label for="radio"></label>
+                    LED 1
+                &nbsp;&nbsp;&nbsp;
+                <input type="radio" name="radio" id="radio" value="two" {{b}}="{{b}}" />
+                <label for="radio2"></label>
+                    LED 2
+
+                <p>&nbsp;</p>
+                <p>
+                    <input style="margin-left:23%;width:60%; height:20%; background-color: #7ffd62; font-size:120%; font-family:Verdana, Geneva, sans-serif; font-weight:bold; color:#FFF" type="submit" name="on2" id="on2" value="on" />
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                    <input style="margin-left:23%;width:60%; height:20%; background-color:black;font-size:120%; font-family:Verdana, Geneva, sans-serif; font-weight:bold; color:#FFF" type="submit" name="on2" id="on2" value="off" />
+                </p>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+    <div id="footer">
+       www.inlhearts.com
+    </div>
+
+
+</body>
+</html>
